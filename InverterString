@@ -1,0 +1,28 @@
+public class InverterString {
+    public static void main(String[] args) {
+        String original = "hello world";
+        String invertida = inverterString(original);
+        System.out.println("String original: " + original);
+        System.out.println("String invertida: " + invertida);
+    }
+
+    public static String inverterString(String str) {
+        char[] caracteres = str.toCharArray();
+        int inicio = 0;
+        int fim = str.length() - 1;
+
+        while (inicio < fim) {
+            // Troca os caracteres nas posições inicio e fim
+            char temp = caracteres[inicio];
+            caracteres[inicio] = caracteres[fim];
+            caracteres[fim] = temp;
+
+            // Move os ponteiros de inicio e fim
+            inicio++;
+            fim--;
+        }
+
+        // Constrói a string invertida a partir do array de caracteres
+        return new String(caracteres);
+    }
+}
